@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyrics video maker</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Lora&family=Mystery+Quest&family=Nunito&family=Poppins&family=Quicksand&family=Roboto+Mono&family=Sour+Gummy&display=swap" rel="stylesheet">
+    <script type="module" src="https://cdn.jsdelivr.net/gh/starfederation/datastar@1.0.0-beta.10/bundles/datastar.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+
+<body data-signals-font data-signals-theme  data-signals-transparent class="cloak"
+data-class="{cloak:false}"
+data-class-poppins="$font=='poppins'"
+data-class-quicksand="$font=='quicksand'"
+data-class-titillium="$font=='titillium'"
+data-class-nunito="$font=='nunito'"
+data-class-lora="$font=='lora'"
+data-class-arial="$font=='arial'"
+data-class-mysteryquest="$font=='mysteryquest'"
+data-class-courgette="$font=='courgette'"
+data-class-sourgummy="$font=='sourgummy'"
+data-attr-theme="($theme=='blacktheme' && 'dark') || ($theme=='pinktheme' && 'pink') || ($theme=='bluetheme' && 'blue') || ($theme=='greentheme' && 'green') || ($theme=='orangetheme' && 'orange')"> 
+    <main class="main-type" data-signals-cursorshow 
+    data-signals-showoption 
+    data-signals-showoptiona data-signals-contenteditable data-signals-border>
+        <div class="opt-type" data-class-showoption="$showoption">
+            <div>
+                <span style="display:block;margin-bottom: 0.5rem;">Choose a font:</span>
+                <div class="butt-font">
+                    <button data-group="font" class="butt-on" data-on-click="$font='quicksand'">Quicksand</button>
+                    <button data-group="font" class="butt-on" data-on-click="$font='nunito'">Nunito</button>
+                    <button data-group="font" class="butt-on active" data-on-click="$font=''">Roboto Mono</button>
+                    <button data-group="font" class="butt-on" data-on-click="$font='poppins'">Poppins</button>
+                    <button data-group="font" class="butt-on" data-on-click="$font='sourgummy'">Sour Gummy</button>
+                    <button data-group="font" class="butt-on" data-on-click="$font='courgette'">Courgette</button>
+                    <button data-group="font" class="butt-on" data-on-click="$font='mysteryquest'">Mystery Quest</button>
+                    <button data-group="font" class="butt-on" data-on-click="$font='lora'">Lora</button>
+
+                </div>
+            </div>
+            <div>
+                <hr>
+                <span style="display:block;margin: 0.5rem 0;">Font size:</span>
+                <div class="butt-font">
+                    <button class="butt-on" data-signals-font-size="6" data-on-click="$fontSize = $fontSize + 0.25">Up by 4px</button>
+                    <button class="butt-on" data-on-click="$fontSize = $fontSize - 0.25">Down by 4px</button>
+                </div>
+            </div>
+            <hr>
+              <div class="butt-font">
+                <button class="butt-on" data-group="contentedit" data-on-click="$contenteditable=!$contenteditable">Type directly</button>
+                <button class="butt-on" data-group="contentedit" data-on-click="$border=!$border">Border</button>
+              </div>
+            <div>
+                <hr>
+                <span style="display:block;margin: 0.5rem 0;">Alignment:</span>
+                <div class="butt-font">
+                    <button data-group="align" class="butt-on" data-signals-align data-on-click="$align='left'">Lft</button>
+                    <button data-group="align" class="butt-on active" data-signals-align data-on-click="$align='right'" >Rht</button>
+                    <button data-group="align" class="butt-on" data-signals-align data-on-click="$align='center'" >Ctr</button>
+                    <button data-group="align" class="butt-on" data-signals-align data-on-click="$align='justify'" >Jstfy</button>
+                </div>
+            </div>
+            <div>
+                <hr>
+                <span style="display:block;margin: 0.5rem 0;">Choose a theme:</span>
+                <div class="butt-font">
+                    <button data-group="theme" class="butt-on" data-on-click="$theme='blacktheme'">Blackish</button>
+                    <button data-group="theme" class="butt-on active" data-on-click="$theme=''">Whitish</button>
+                    <button data-group="theme" class="butt-on" data-on-click="$theme='pinktheme'" >Pinkish</button>
+                    <button data-group="theme" class="butt-on" data-on-click="$theme='bluetheme'" >Bluish</button>
+                    <button data-group="theme" class="butt-on" data-on-click="$theme='greentheme'">Greenish</button>
+                    <button data-group="theme" class="butt-on" data-on-click="$theme='orangetheme'">Orangish</button>
+                </div>
+            </div>
+        </div>
+        <div class="main-box">
+            <input type="text" data-bind-text value="we are so sorry, uncle albert....." class="input-main">
+            <div data-text="$text" id="data"
+                data-class-leftalign="$align=='left'" 
+                data-class-centeralign="$align=='center'" 
+                data-class-justifyalign="$align=='justify'"
+                data-class="$align=='right'"
+                data-attr-style="'font-size: '+ $fontSize +'em'"
+                data-class-transparent="$transparent=='a'"
+                data-class-cursorshow="$cursorshow=='a'"
+                data-attr-contenteditable="$contenteditable"
+                data-class-border="$border"
+                class="type-text">
+            </div>
+            <div class="mov-btns">
+                <button data-group="mov" class="blob-1 but-on" data-on-click="$showoption=!$showoption, $showoptiona=''">Controls</button>
+                <button data-group="mov" class="blob-2 but-on" data-on-click="$showoptiona=!$showoptiona, $showoption=''">Saves</button>
+            </div>
+        </div>
+        <div class="save-type" data-bind-show-button data-bind-show-buttond data-class-showsave="$showoptiona">
+                <div class="btnss">
+                    <button class="but-on btnsss" id="captureBtn">Save image</button>
+                    <button class="but-on btnsss" id="captureTransparentBtn" data-on-click="$transparent='a'" style="margin-top: 1rem;">Save transparent image</button>
+                    <hr class="no-dpm" style="margin: 1rem;">
+                    <button class="no-dpm but-on btnsss" id="start" data-on-click="$showButton='a', $transparent='', $cursorshow='a'">Record video</button>
+                    <div class="no-dpm" id="recordIndicator" style="padding: 1rem 0;" data-show="$showButton != ''">🔴 Recording...</div>
+                    <button style="margin: 1rem 0;" class="no-dpm but-on btnsss" id="stop" data-show="$showButton != ''" data-on-click="$showButtond='a', $cursorshow=''">Stop Recording</button>
+                    <video class="no-dpm" style="width: 100%; height: auto;" autoplay></video>
+                    <a href="" id="download" class="no-dpm but-on" style="width: max-content; margin: auto; background-color: var(--clr-mid); color: var(--clr-txt); display: none;margin-top: 0.5rem;">Download video</a>
+                </div>
+                <div class="txtt">
+                    <p style="margin-bottom: 0.5rem;"><a href="pages/help.html">help, info, faq</a></p>
+                    <p>>> if something breaks, refresh</p>
+                </div>
+        </div>
+    </main>
+
+<script>
+  //for the auto-scrolling
+let isMouseInside = false;
+const elem = document.getElementById('data');
+elem.addEventListener('mouseenter', function() {
+  isMouseInside = true; 
+});
+elem.addEventListener('mouseleave', function() {
+  isMouseInside = false; 
+});
+window.setInterval(function() {
+  if (!isMouseInside) {
+    var elem = document.getElementById('data');
+    elem.scrollTop = elem.scrollHeight;
+  }
+}, 10);
+
+//for capturing video
+const videoElem = document.querySelector("video");
+const startElem = document.getElementById("start");
+const downloadBtn = document.getElementById("download");
+const stopElem = document.getElementById("stop");
+const demoElem = document.querySelector("#data");
+const displayMediaOptions = {
+  video: {
+    displaySurface: "window",
+  },
+  audio: false,
+  preferCurrentTab: true,
+};
+startElem.addEventListener(
+  "click",
+  (evt) => {
+    startCapture();
+  },
+  false
+);
+stopElem.addEventListener(
+  "click",
+  (evt) => {
+    stopCapture();
+  },
+  false
+);
+let mediaRecorder;
+let recordedChunks = [];
+async function startCapture() {
+  try {
+    const stream = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
+    const [track] = stream.getVideoTracks();
+    const restrictionTarget = await RestrictionTarget.fromElement(demoElem);
+    await track.restrictTo(restrictionTarget);
+    const mimeType = "video/mp4";
+    const mediaRecorder = new MediaRecorder(stream, { mimeType: mimeType }); 
+    let recordedChunks = [];
+    mediaRecorder.ondataavailable = (event) => {
+      if (event.data.size > 0) {
+        recordedChunks.push(event.data);
+      }
+    };
+    mediaRecorder.onstop = () => {
+      let blob = new Blob(recordedChunks, { type: mimeType });
+      let url = URL.createObjectURL(blob);
+      videoElem.src = url;
+      videoElem.controls = true;
+      downloadBtn.href = url;
+      downloadBtn.download = "recording.mp4";
+      downloadBtn.style.display = "block";
+    };
+    videoElem.srcObject = stream;
+    mediaRecorder.start();
+  } catch (err) {
+    console.error(err);
+  }
+}
+function stopCapture(evt) {
+  let tracks = videoElem.srcObject.getTracks();
+  tracks.forEach((track) => track.stop());
+  videoElem.srcObject = null;
+}
+
+//for image capturing
+
+let screenshotCount = 1;
+function captureScreenshot(makeTransparent = false) {
+    const element = document.getElementById("data");
+    const currentBg = getComputedStyle(document.body).getPropertyValue('--clr-bg');
+    if (makeTransparent) {
+        element.style.setProperty('--clr-bg', 'transparent');
+    }
+    html2canvas(element, {
+        backgroundColor: makeTransparent ? null : currentBg,
+        scale: 2,
+    }).then(canvas => {
+        if (makeTransparent) {
+            element.style.setProperty('--clr-bg', currentBg);
+        }
+        const imgData = canvas.toDataURL("image/png");
+        const filename = `screenshot-${screenshotCount}${makeTransparent ? "-transparent" : ""}.png`;
+        screenshotCount++;
+        const link = document.createElement("a");
+        link.href = imgData;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
+}
+document.getElementById("captureBtn").addEventListener("click", function() {
+    captureScreenshot(false);
+});
+document.getElementById("captureTransparentBtn").addEventListener("click", function() {
+    captureScreenshot(true);
+});
+
+//for buttons
+
+function setupToggleButtons(buttonSelector) {
+    const buttons = document.querySelectorAll(buttonSelector);
+    buttons.forEach(button => {
+        if (button.classList.contains('active')) {
+            button.style.border = '2px solid var(--clr-fg)';
+        }
+        button.addEventListener('click', function() {
+            if (this.classList.contains('active')) {
+                this.style.border = '2px solid var(--clr-ano)';
+                this.classList.remove('active');
+                return;
+            }
+            buttons.forEach(btn => {
+                if (btn.dataset.group === this.dataset.group) {
+                    btn.style.border = '2px solid var(--clr-ano)';
+                    btn.classList.remove('active');
+                }
+            });
+            this.style.border = '2px solid var(--clr-fg)';
+            this.classList.add('active');
+        });
+    });
+}
+setupToggleButtons('[data-group="theme"]');
+setupToggleButtons('[data-group="font"]');
+setupToggleButtons('[data-group="align"]');
+setupToggleButtons('[data-group="contentedit"]');
+setupToggleButtons('[data-group="mov"]');
+</script>    
+</body>
+</html>

@@ -1,0 +1,330 @@
+:root{
+    --clr-bg:hsl(30, 100%, 98%);
+    --clr-fg:hsl(0, 0%, 10%);
+    --clr-txt:hsl(0, 100%, 70%);
+    --clr-mid:hsl(0, 0%, 25%);
+    --clr-ano: hsl(0, 17%, 72%);
+    --clr-boxshadow: rgba(0, 0, 0, 0.6);
+    --fs-smllst:0.75rem;
+}
+[theme='dark'] {
+    --clr-bg:hsl(0, 0%, 10%);
+    --clr-fg:hsl(30, 100%, 98%);
+    --clr-ano: hsl(0, 17%, 40%);
+}
+[theme='pink'] {
+    --clr-bg:hsl(349, 100%, 80%);
+    --clr-txt:hsl(187, 88%, 23%);
+    --clr-mid:hsl(130, 76%, 80%);
+
+}
+[theme='blue'] {
+    --clr-bg:hsl(214, 100%, 80%);
+    --clr-txt:hsl(355, 100%, 40%);
+    --clr-mid:hsl(0, 0%, 80%);
+}
+[theme='green'] {
+    --clr-bg:hsl(106, 100%, 70%);
+    --clr-mid:hsl(0, 8%, 71%);
+    --clr-txt:hsl(22, 100%, 27%);
+
+}
+[theme='orange'] {
+    --clr-bg:hsl(29, 100%, 70%);
+    --clr-txt:hsl(325, 100%, 35%);
+    --clr-mid:hsl(246, 46%, 77%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    color: inherit;
+}
+[contenteditable] {
+    outline: 0px solid transparent;
+}
+.cloak {
+    opacity: 0;
+    transition: opacity 2s ease-in;
+}
+body{
+    font-family: "Roboto Mono", monospace;
+    background-color: var(--clr-bg);
+    color: var(--clr-fg);
+    width: min(100%, 1500px);
+    margin: auto;
+    font-size: var(--fs-smllst)
+}
+.main-type{
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    height: 100vh;
+}
+.opt-type{
+    flex: 1;
+    background-color: var(--clr-bg);
+    color: var(--clr-txt);
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.butt-font{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0;
+    justify-content: space-between;
+}
+.butt-on,.but-on{
+    background-color: var(--clr-bg);
+    border: solid 2px var(--clr-ano);
+    font-size: inherit;
+    font-family: inherit;
+    padding: 0.25rem 0.5rem;
+    color: inherit;
+}
+.main-type>:nth-child(2){
+    flex: 4;
+    padding: 1rem 0;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column-reverse;
+}
+.main-box{
+    max-width: 60%;
+    margin-top: 2rem;
+}
+.type-text{
+    flex: 1;
+    margin: 0;
+    padding: 4rem;
+    overflow-y:scroll;
+    max-height: 100%;
+    line-height: 1.6;
+    scrollbar-width: none;
+    align-content: center;
+    text-align: right;
+    word-wrap:break-word;
+    isolation: isolate;
+    transform-style: flat;
+    background: var(--clr-bg);
+}
+.border{
+    border: solid 2px var(--clr-fg);
+}
+.input-main{
+    border-radius: 8px; border: none;font-family: inherit;height: 1.5rem;width:60%;margin: auto;padding: 0.25rem 0.5rem;outline: 0px solid transparent;background-color: var(--clr-fg);color: var(--clr-bg);
+}
+.save-type{
+    flex: 1;
+    padding: 8rem 1rem 1rem 1rem;
+    display: flex;
+    height: 100%;
+    margin: auto;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    flex-direction: column;
+    text-align: center;
+}
+.btnsss{
+    background-color: var(--clr-mid);
+    color:var(--clr-txt);
+}
+.mov-btns{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--clr-ano);
+    padding: 1rem;
+}
+.transparent{
+    background-color: transparent;
+}
+.cursorshow{
+    cursor: none;
+}
+.leftalign{
+    text-align: left;
+}
+.centeralign{
+    text-align: center;
+}
+.justifyalign{
+    text-align: justify;
+}
+.poppins{
+    font-family: "Poppins", sans-serif;
+    word-spacing: 0.5rem;
+}
+.quicksand{
+    font-family: "Quicksand", sans-serif;
+    word-spacing: 0.5rem;
+}
+.nunito{
+    font-family: "Nunito", sans-serif;
+    word-spacing: 0.5rem;
+}
+.lora{
+    font-family: "Lora", serif;
+    word-spacing: 0.5rem;
+}
+.sourgummy{
+    font-family: "Sour Gummy", sans-serif;
+    word-spacing: 0.5rem;
+}
+.mysteryquest{
+    font-family: "Mystery Quest", system-ui;
+    word-spacing: 0.5rem;
+}
+.courgette{
+    font-family: "Courgette", cursive;
+    word-spacing: 0.5rem;
+}
+video{
+    aspect-ratio: 4/3;
+    background-color: inherit;
+}
+@media(max-width:1300px){
+    :root{
+        --fs-smllst:0.65rem;
+    }
+}
+@media(max-width:1200px){
+    .main-type{
+        gap: 0;
+    }
+    .main-box{
+        margin-top: 3rem;
+        padding: 0;
+        font-size: 0.65rem;
+        max-width: 100%;
+        height: 100%;
+    }
+    .type-text{
+        padding: 1rem 3rem;
+        margin: auto;
+        width: 100%;
+        font-size: 4rem;
+    }
+    .save-type{
+        margin-top: 2rem;
+    }
+    .mov-btns{
+        display: block;
+        z-index: 8;
+        height: 4rem;
+    }
+    .blob-1{
+        position: fixed;
+        right: 2rem;
+        z-index: 5;
+        height: 2rem;
+        font-size: 0.75rem;
+    }
+    .blob-2{
+        display: none;
+    }
+    .opt-type{
+        display: none;
+        opacity: 0;
+    }
+    .showoption{
+        display: block;
+        position: absolute;
+        opacity: 100;
+        z-index: 2;
+        right: 0;
+        background-color: var(--clr-bg);
+        width: 40%;
+        padding: 5rem 2rem 0 2rem;
+        border-left: solid var(--clr-fg) 2px;
+        height: 100vh;
+        transition: ease-in-out 0.25s;
+        gap: 1rem;
+    }
+    .showoption>div{
+        margin: 1rem 0;
+    }
+}
+@media(max-width:900px){
+    body{
+        font-size: 0.75rem;
+        height: fit-content;
+    }
+    .blob-1{
+        right: 1rem;
+    }
+    .blob-2{
+        display: block;
+        position: fixed;
+        left: 1rem;
+        font-size: 0.75rem;
+        z-index: 10;
+    }
+    .save-type{
+        display: none;
+        opacity: 0;
+    }
+    .showsave{
+        display: block;
+        position: absolute;
+        opacity: 100;
+        z-index: 4;
+        border-right: solid var(--clr-fg) 2px;
+        background-color: var(--clr-bg);
+        width: 40%;
+        padding: 8rem 2rem 0 2rem;
+        height: 100vh;
+        transition: ease-in-out 0.25s;  
+    }
+    .main-box{
+        font-size: 0.5rem;
+    }
+}
+@media(max-width:600px){
+    body{
+        height: 50vh;
+    }
+    .blob-2{
+        display: none;
+    }
+    .main-type{
+        flex-direction: column;
+        gap: 0;
+    }
+    .main-box{
+        font-size: 0.35rem;
+    }
+    .showoption{
+        width: 80%;
+    }
+    .save-type{
+        display: block;
+        opacity: 1;
+        padding: 0;
+        flex: 0;
+        height: min-content;
+        height: 100px;
+        margin: 0;
+        padding-bottom: 2rem;
+    }
+    .type-text{
+        padding:3rem 2rem;
+        max-height: 400px;
+    }
+     .txtt{
+        margin-top: 2rem;
+     }
+     .no-dpm{
+        display: none;
+     }
+    .input-main{
+        width: 80%;
+        height: 2.5rem;
+    }
+}
