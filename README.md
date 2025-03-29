@@ -1,5 +1,5 @@
 # lyricsvideomaker
-[website](https://lyrics.pages.dev)
+[website](https://makelyrics.pages.dev)
 
 I love those tiktok videos with lyrics and quotes over a movie clip or just plain background. So I made a tool to make that. Hope this will be helpful.
 
