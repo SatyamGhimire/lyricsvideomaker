@@ -120,7 +120,7 @@ body{
 }
 .save-type{
     flex: 1;
-    padding: 8rem 1rem 1rem 1rem;
+    padding: 6rem 1rem 1rem 1rem;
     display: flex;
     height: 100%;
     margin: auto;
@@ -189,6 +189,20 @@ video{
     aspect-ratio: 4/3;
     background-color: inherit;
 }
+.hide-others *:not(:fullscreen) {
+    display: none;
+}
+:fullscreen {
+    background: var(--clr-bg);
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    font-size: 1.25rem;
+}
+.s-mar{
+    width: 80%;
+    margin: auto;
+}
 @media(max-width:1300px){
     :root{
         --fs-smllst:0.65rem;
@@ -197,6 +211,9 @@ video{
 @media(max-width:1200px){
     .main-type{
         gap: 0;
+    }
+    .nonedp{
+        opacity: 0;
     }
     .main-box{
         margin-top: 3rem;

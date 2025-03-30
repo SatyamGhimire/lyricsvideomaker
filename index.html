@@ -23,7 +23,7 @@
     </script>
 </head>
 
-<body data-signals-font data-signals-theme  data-signals-transparent class="cloak"
+<body data-signals-font data-signals-theme  data-signals-transparent data-signals-fullscreen class="cloak"
 data-class="{cloak:false}"
 data-class-poppins="$font=='poppins'"
 data-class-quicksand="$font=='quicksand'"
@@ -89,7 +89,7 @@ data-attr-theme="($theme=='blacktheme' && 'dark') || ($theme=='pinktheme' && 'pi
                 </div>
             </div>
         </div>
-        <div class="main-box">
+        <div class="main-box" id="fullscreenDiv">
             <input type="text" data-bind-text value=".... it's been a long, long time since I've ...." class="input-main">
             <div data-text="$text" id="data"
                 data-class-leftalign="$align=='left'" 
@@ -101,9 +101,10 @@ data-attr-theme="($theme=='blacktheme' && 'dark') || ($theme=='pinktheme' && 'pi
                 data-class-cursorshow="$cursorshow=='a'"
                 data-attr-contenteditable="$contenteditable"
                 data-class-border="$border"
+                data-class-fullscreen="$fullscreen"
                 class="type-text">
             </div>
-            <div class="mov-btns">
+            <div class="mov-btns" id="movbuttons">
                 <button data-group="mov" class="blob-1 but-on" data-on-click="$showoption=!$showoption, $showoptiona=''">Controls</button>
                 <button data-group="mov" class="blob-2 but-on" data-on-click="$showoptiona=!$showoptiona, $showoption=''">Saves</button>
             </div>
@@ -120,6 +121,8 @@ data-attr-theme="($theme=='blacktheme' && 'dark') || ($theme=='pinktheme' && 'pi
                     <a href="" id="download" class="no-dpm but-on" style="width: max-content; margin: auto; background-color: var(--clr-mid); color: var(--clr-txt); display: none;margin-top: 0.5rem;">Download video</a>
                 </div>
                 <div class="txtt">
+                    <button class="but-on btnsss" data-on-click="$fullscreen=!$fullscreen">Fullscreen</button>
+                    <hr style="margin: 1rem 0;">
                     <p style="margin-bottom: 0.5rem;"><a href="pages/help.html">help, info, faq</a></p>
                     <p>>> if something breaks, refresh</p>
                 </div>
@@ -271,6 +274,26 @@ setupToggleButtons('[data-group="font"]');
 setupToggleButtons('[data-group="align"]');
 setupToggleButtons('[data-group="contentedit"]');
 setupToggleButtons('[data-group="mov"]');
+document.addEventListener("click", function(event) {
+    if (event.target.matches("[data-on-click*='$fullscreen']")) {
+        let targetDiv = document.getElementById("fullscreenDiv");
+
+        if (!document.fullscreenElement) {
+            targetDiv.requestFullscreen().catch(err => {
+                console.error(`Error attempting fullscreen: ${err.message}`);
+            });
+        } else {
+            document.exitFullscreen();
+        }
+    }
+});
+document.addEventListener("fullscreenchange", function() {
+    let thatdiv = document.getElementById("data");
+    let buttons = document.getElementById("movbuttons");
+    thatdiv.classList.toggle("s-mar", !!document.fullscreenElement);
+    buttons.classList.toggle("nonedp", !!document.fullscreenElement);
+});
+</script>
 </script>    
 </body>
 </html>
